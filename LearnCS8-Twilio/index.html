@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A silly little lazy orange cat that will enjoy eating lasagna with you ">
+    <meta name="author" content="862375882">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>Garfield Plush</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+  <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://www.youtube.com/@thegarfieldshowofficial" target="_blank">The Garfield Show</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://www.walmart.com/ip/Ugly-Silent-Yellow-Fat-Cat-Garfield-Plush-Toys-Soft-Plush-Toy-Children-Children-s-Birthday-Baby-Pickup-Doll-30cm/1566489493?wmlspartner=wlpa&selectedSellerId=101087374&adid=222222222271566489493_101087374_14069003552_202077872&wl0=&wl1=g&wl2=c&wl3=42423897272&wl4=pla-295289030566&wl5=9031488&wl6=&wl7=&wl8=&wl9=pla&wl10=463001233&wl11=online&wl12=1566489493_101087374&veh=sem&gclid=CjwKCAjw7c2pBhAZEiwA88pOFy76grYjgKzKpLAxx_PDxuv7O0TRIKszdmxwDqIV2m2enGxRvkAxwBoC0TUQAvD_BwE" target="_blank">Plush</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://www.reddit.com/r/CuratedTumblr/comments/11802a3/oh_to_be_a_wellloved_garfield_plushie/" target="_blank">Memes</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://www.pinterest.com/pin/that-one-garfield-plush--82964818127777778/" target="_blank">Internet</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://www.spendwithpennies.com/easy-homemade-lasagna/" target="_blank">Lasagna</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://www.gocomics.com/garfield" target="_blank">Comics</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://en.wikipedia.org/wiki/Garfield" target="_blank">Wiki</a>
+    </div>
+  </nav> 
+  <!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Buy your own Garfield Plush</h1>
+        <p class="lead font-weight-normal">Silly lazy orange cat just waiting to enjoy tasty lasagna with you.</p>
+        <a class="btn btn-outline-secondary" href="https://www.plushgarfield.com/collections/garfield-plush/products/garfield-plush-garfield-plush-doll-orange-cat-plush-animals-pillows-toy-boys-girls-children-christmas-birthday?variant=c3d0f78a-04d2-4047-91bf-b8f712e3fcb0">plushgarfield.com</a>
+    </div>
+</div>
+<!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "AC04ef27323576c6ca11d4bf1fbb87d6d8";
+                var authToken = "c13e4bd00e6d9221eafb633a13904a28";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "18447344896" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + " thank you for your interest in a Garfield Plush. Make sure to prepare some lasagna."
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Lazy Garfield Plushie</h2>
+            <p class="lead">It just wants to enjoy some lasagna with you</p>
+            <img class="mx-auto" src="Garfieldplushtoy.jpeg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
